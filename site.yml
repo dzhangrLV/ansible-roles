@@ -1,0 +1,17 @@
+---
+- name: Webserver2 configuration
+  hosts: web2
+  become: yes
+
+  roles:
+    - common
+    - webserver
+    - security
+
+- name: Webserver3 configuration
+  hosts: web3
+  become: yes
+
+  roles:
+    - common
+    - security

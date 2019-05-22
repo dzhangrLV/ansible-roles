@@ -1,0 +1,12 @@
+---
+# tasks file for security
+- name: Copy banner
+  copy: src=banner dest=/etc/ssh/
+
+
+- name: edit config ssh
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    line: 'Banner /etc/ssh/banner'
+  notify:
+    - restart sshd
